@@ -96,18 +96,56 @@
                      <td>name</td>
                      <td>value</td>
                    </tr>
-                   <% for(var p in stat){ %>
                    <tr>
-                     <td><%= p %></td>
-                     <td><%= stat[p] %> </td>
+                     <td> czxid: </td>
+                     <td><%= parseInt(stat['czxid'].toString('hex'), 16) %> </td>
                    </tr>
-                   <%} %>
+                   <tr>
+                     <td> mzxid: </td>
+                     <td><%= parseInt(stat['mzxid'].toString('hex'), 16) %> </td>
+                   </tr>
+                   <tr>
+                     <td> ctime: </td>
+                     <td><%= parseInt(stat['ctime'].toString('hex'), 16) %> </td>
+                   </tr>
+                   <tr>
+                     <td> mtime: </td>
+                     <td><%= parseInt(stat['mtime'].toString('hex'), 16) %> </td>
+                   </tr>
+                   <tr>
+                     <td> version: </td>
+                     <td><%= stat['version'] %> </td>
+                   </tr>
+                   <tr>
+                     <td> cversion: </td>
+                     <td><%= stat['cversion'] %> </td>
+                   </tr>
+                   <tr>
+                     <td> aversion: </td>
+                     <td><%= stat['aversion'] %> </td>
+                   </tr>
+                   <tr>
+                     <td> ephemeralOwner: </td>
+                     <td><%= parseInt(stat['ephemeralOwner'].toString('hex'), 16) %> </td>
+                   </tr>
+                   <tr>
+                     <td> dataLength: </td>
+                     <td><%= stat['dataLength'] %> </td>
+                   </tr>
+                   <tr>
+                     <td> numChildren: </td>
+                     <td><%= stat['numChildren'] %> </td>
+                   </tr>
+                   <tr>
+                     <td> pzxid: </td>
+                     <td><%= parseInt(stat['pzxid'].toString('hex'), 16) %> </td>
+                   </tr>
                 </table>
                 <label>Data (Click on the value to edit it) : </label>
                 <input type='hidden' value='<%= data %>' id='data' />
                 <div id='data_container' onclick='edit();'>
 				  <% if (data && data != ''){ %>
-                  <%= data %>
+                  <%= data.toString('utf-8') %>
 				  <% } else {%>
 				     NO DATA OR EMPTY VALUE
                  <% } %>
